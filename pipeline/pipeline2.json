@@ -71,7 +71,10 @@
 								},
 								"sink": {
 									"name": "petal_length",
-									"physicalType": "decimal"
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 3,
+									"precision": 18
 								}
 							},
 							{
@@ -82,7 +85,10 @@
 								},
 								"sink": {
 									"name": "petal_width",
-									"physicalType": "decimal"
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 3,
+									"precision": 18
 								}
 							},
 							{
