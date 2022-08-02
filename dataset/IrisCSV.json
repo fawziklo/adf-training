@@ -1,0 +1,44 @@
+{
+	"name": "IrisCSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "iris_train.csv",
+				"container": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "sepal_length",
+				"type": "String"
+			},
+			{
+				"name": "sepal_width",
+				"type": "String"
+			},
+			{
+				"name": "petal_length",
+				"type": "String"
+			},
+			{
+				"name": "petal_width",
+				"type": "String"
+			},
+			{
+				"name": "species",
+				"type": "String"
+			}
+		]
+	}
+}

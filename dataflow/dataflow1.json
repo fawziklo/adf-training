@@ -1,0 +1,48 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "IrisCSV",
+						"type": "DatasetReference"
+					},
+					"name": "Iris"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "OutputCSV",
+						"type": "DatasetReference"
+					},
+					"name": "IrisClean"
+				}
+			],
+			"transformations": [
+				{
+					"name": "NewColumn"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          sepal_length as string,",
+				"          sepal_width as string,",
+				"          petal_length as string,",
+				"          petal_width as string,",
+				"          species as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> Iris",
+				"Iris derive(species = right(species,6)) ~> NewColumn",
+				"NewColumn sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> IrisClean"
+			]
+		}
+	}
+}
