@@ -1,0 +1,12 @@
+{
+	"name": "Ouputsql",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=dbserver-11.database.windows.net;initial catalog=db;user id=dbadmin",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDNFQzcwOUFELTU2Q0YtNDA5QS1CRUVDLTI3QkY3NkE5OEUyMl8xZTU2NjA0NC0zN2ExLTQ0Y2MtODg3Mi1mZDdjNzkwZGYwZDciDQp9"
+		}
+	}
+}
